@@ -29,10 +29,10 @@ public class App
     	//creating object of empdao class
     	empDao dao = new empDao();
     	
-    	while(op<7) {
+    	while(op<6) {
     		System.out.println("\t\t\t >>---------EMPLOYEE MANAGEMENT SYSTEM------------------<<");
-			System.out.println("\nPress 1 -> ***To Register New Employee \nPress 2 -> ***To Register as Fresher Employee \nPress 3 -> ***To Register as Experienced Employee  \nPress 4 -> ***To Print All Employees \nPress 6 -> ***To  Remove Employee"
-					+ " \nPress 7 -> ***To  Exit");
+			System.out.println("\nPress 1 -> ***To Register New Employee \nPress 2 -> ***To Register as Fresher Employee \nPress 3 -> ***To Register as Experienced Employee  \nPress 4 -> ***To Print All Employees \nPress 5 -> ***To  Remove Employee"
+					+ " \nPress 6 -> ***To  Exit");
 			System.out.print("\nEnter Your Choice:  ");
 			op = obj.nextInt();
 			
@@ -109,10 +109,11 @@ public class App
 				dao.connect();
 				List<Emp> empl = dao.fetchAll();    
 				
-				//calling disconnect method to end the session
-				dao.disconnect();
+				
 				for(Emp e : empl)
 					System.out.println(e);
+				//calling disconnect method to end the session
+				dao.disconnect();
 			}
 			
 			//5th case to delete employee from the databse

@@ -50,13 +50,13 @@ public class empDao {
 				}
 //Fifth method to delete employee via id
 	 		  public int deltEmp(int id) {
-	 				Query q = ss.createQuery("delete from emp e where e.empId=: Id").setParameter("Id", id);
+	 				Query q = ss.createQuery("delete from Emp e where e.empId=: Id").setParameter("Id", id);
 	 				int count = q.executeUpdate();
 	 				return count;
 	 			}
 //sixth method to fetch all the data from the database
 	 		 public List fetchAll() {
-	 			Query q =  ss.createQuery(" from emp");
+	 			Query q =  ss.createQuery("from Emp");
 	 			List<Emp> empl = q.getResultList();
 	 			return empl;
 	 		}
